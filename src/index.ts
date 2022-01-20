@@ -1,20 +1,14 @@
-import express from "express";
-import { graphqlHTTP } from "express-graphql";
+import app from "./app";
 import config from "config";
-import { schema } from "./schema";
+import connect from "./db/dbConnection";
 
-const app = express();
 const port = config.get<number>("port");
 
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema,
-    graphiql: true,
-  })
-);
-
 app.listen(port, async () => {
-  console.log(`🚀  GraphQL server running at port: ${port}`);
-  //await connect();
+  try {
+    console.log(`🚀  GraphQL server running at port: ${port}`);
+    await connect();
+  } catch (error) {
+    console.log(error);
+  }
 });
