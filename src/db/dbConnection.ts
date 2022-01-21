@@ -1,4 +1,5 @@
 import { createConnection } from "typeorm";
+import { Users } from "../entities/User";
 
 const connection = async () => {
   try {
@@ -9,8 +10,8 @@ const connection = async () => {
       username: "root",
       password: "root",
       database: "graphql_test",
-      entities: [],
-      synchronize: false,
+      entities: [Users],
+      synchronize: true,
       logging: false,
     });
     console.log("DB connected");
