@@ -1,6 +1,6 @@
 import { GraphQLString } from "graphql";
 
-export const Hello = {
+export const HELLO = {
   type: GraphQLString,
   resolve: () => "Hello World",
 };

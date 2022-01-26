@@ -1,5 +1,5 @@
 import { createConnection } from "typeorm";
-import { Users } from "../entities/User";
+import { Users } from "../graphql/entities/User";
 
 const connection = async () => {
   try {
