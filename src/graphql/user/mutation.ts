@@ -1,6 +1,6 @@
 import { GraphQLString } from "graphql";
 import { Users } from "../entities/User";
-import { UserType } from "../typeDefs/user";
+import { UserType } from "./type";
 import bcrypt from "bcrypt";
 
 export const CREATE_USER = {
